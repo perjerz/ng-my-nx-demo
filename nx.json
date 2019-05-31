@@ -9,9 +9,13 @@
   },
   "projects": {
     "api": {
-      "tags": [
-        "api"
-      ]
+      "tags": ["api"]
+    },
+    "web": {
+      "tags": ["web"]
+    },
+    "web-e2e": {
+      "tags": []
     }
   }
 }
