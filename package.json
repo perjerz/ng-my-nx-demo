@@ -27,8 +27,17 @@
     "help": "./node_modules/.bin/nx help"
   },
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@nestjs/common": "5.5.0",
+    "@nestjs/core": "5.5.0"
+  },
   "devDependencies": {
+    "ts-jest": "24.0.0",
+    "@nrwl/builders": "7.8.6",
+    "jest": "24.1.0",
+    "@types/jest": "24.0.9",
+    "@nestjs/schematics": "5.11.2",
+    "@nestjs/testing": "5.5.0",
     "@angular/cli": "7.3.1",
     "@nrwl/schematics": "7.8.6",
     "@types/node": "~8.9.4",
