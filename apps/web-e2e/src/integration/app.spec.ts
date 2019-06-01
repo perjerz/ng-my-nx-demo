@@ -30,4 +30,22 @@ describe('NG-MY', () => {
       expect(src).contain('cypress');
     });
   });
+
+  it('should contain Siwat Kaolueng as Speaker', () => {
+    cy.get('a[href="/speakers"]').eq(0).click();
+    const me = cy.contains('.team-card-name','Siwat Kaolueng');
+    me.scrollIntoView();
+    me.should('exist');
+  });
+
+  it('should contain Using Nx: Angular CLI Power-ups for Modern Development session', () => {
+    cy.get('a[href="/sessions"]').eq(0).click();
+    const myTopic = cy.contains('.session-topic','Using Nx: Angular CLI Power-ups for Modern Development ');
+    myTopic.scrollIntoView();
+    myTopic.should('exist');
+    const sessionItem = cy.get('.session-item').filter((i, el) => el.getElementsByClassName('session-topic')[0].textContent.trim() === 'Using Nx: Angular CLI Power-ups for Modern Development').eq(0);
+    sessionItem.find('button').click();
+    cy.get('.team-highlight-name').text({whitespace: "simplify"}).should('eq', 'Siwat Kaolueng');
+  });
+
 });
