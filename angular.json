@@ -184,6 +184,39 @@
           }
         }
       }
+    },
+    "lib-a": {
+      "root": "libs/lib-a",
+      "sourceRoot": "libs/lib-a/src",
+      "projectType": "library",
+      "prefix": "ng-my",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/lib-a/tsconfig.lib.json",
+              "libs/lib-a/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/lib-a/jest.config.js",
+            "tsConfig": "libs/lib-a/tsconfig.spec.json",
+            "setupFile": "libs/lib-a/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

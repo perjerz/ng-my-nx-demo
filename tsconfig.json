@@ -9,12 +9,18 @@
     "importHelpers": true,
     "target": "es5",
     "module": "es2015",
-    "typeRoots": ["node_modules/@types"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ng-my/lib-a": [
+        "libs/lib-a/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
